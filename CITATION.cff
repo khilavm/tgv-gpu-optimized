@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+title: "GPU-FFT levers for a spectral Taylor–Green DNS"
+abstract: >-
+  A small, reproducible benchmark that deconfounds the performance levers of a
+  Fourier pseudospectral direct numerical simulation of the Taylor–Green vortex
+  on a single NVIDIA GPU: floating-point precision (fp32 vs fp64), real-to-complex
+  vs complex-to-complex transforms, and cuFFT LTO-IR callback fusion. Each lever is
+  isolated on one GPU at matched problem size.
+type: software
+authors:
+  - family-names: Majmudar
+    given-names: Khilav
+    affiliation: "University of Minnesota, Twin Cities"
+version: "1.0.0"
+date-released: "2026-08-06"
+license: MIT
+repository-code: "https://github.com/khilavm/tgv-nvmath_cufft"
+url: "https://github.com/khilavm/tgv-nvmath_cufft"
+keywords:
+  - computational fluid dynamics
+  - direct numerical simulation
+  - pseudospectral method
+  - Taylor–Green vortex
+  - GPU
+  - cuFFT
+  - roofline
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.21829101"
+    description: "Archived snapshot of this release"
+preferred-citation:
+  type: conference-paper
+  title: "A study of optimization levers in a GPU pseudospectral Taylor–Green vortex solver"
+  authors:
+    - family-names: Majmudar
+      given-names: Khilav
+      affiliation: "University of Minnesota, Twin Cities"
+  year: 2026
+  notes: "Manuscript in preparation."
