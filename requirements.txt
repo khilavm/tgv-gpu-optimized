@@ -1,0 +1,12 @@
+# Core (GPU node): cupy backend needs only these.
+#   cupy-cuda12x   -> match your CUDA 12.x module
+#   numpy, matplotlib
+cupy-cuda12x
+numpy
+matplotlib
+
+# Optional: only for --backend nvmath (reused-plan path). Not needed for the
+# default cupy backend or for analyze.py.
+# nvmath-python[cu12]
+
+# analyze.py runs anywhere (no cupy): numpy + matplotlib only.

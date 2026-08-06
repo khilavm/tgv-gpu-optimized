@@ -1,0 +1,78 @@
+{
+  "meta": {
+    "timestamp": "2026-07-27T05:45:50.093444+00:00",
+    "host": "aga16",
+    "device": {
+      "name": "NVIDIA A100-SXM4-40GB",
+      "total_mem_GB": 39.4925537109375,
+      "free_mem_GB": 39.076416015625,
+      "cupy": "14.1.1"
+    },
+    "gpu_bandwidth_bytes_per_s": 1550000000000.0,
+    "argv": [
+      "benchmark.py",
+      "--transforms",
+      "r2c",
+      "c2c",
+      "--precisions",
+      "fp32",
+      "--backends",
+      "cupy",
+      "--grids",
+      "512",
+      "--reps",
+      "5",
+      "--n-time",
+      "100",
+      "--gpu-bandwidth",
+      "1.55e12",
+      "--out",
+      "results/bench_a100_N512_fp32.json"
+    ]
+  },
+  "records": [
+    {
+      "config": "r2c-fp32-cupy-N512",
+      "ok": true,
+      "transform": "r2c",
+      "precision": "fp32",
+      "backend": "cupy",
+      "N": 512,
+      "Re": 1600.0,
+      "dt": 0.00125,
+      "warmup": 20,
+      "n_time": 100,
+      "reps": 5,
+      "ms_per_step_mean": 257.73193297954276,
+      "ms_per_step_std": 0.005619925553728825,
+      "ms_per_step_min": 257.7224675891921,
+      "validation": {
+        "roundtrip_err": 1.0132789611816406e-06,
+        "E0": 0.12499997764827292,
+        "E0_exact": 0.125,
+        "E0_err": 2.2351727080316408e-08,
+        "eps0": 0.00046874991669540597,
+        "KE0_physical": 0.125
+      },
+      "traffic_model": {
+        "spec_bytes": 538968064,
+        "phys_bytes": 536870912,
+        "fft_traffic_GB": 48.50712576,
+        "elementwise_traffic_GB": 47.429189632,
+        "total_traffic_GB": 95.936315392,
+        "elementwise_fraction": 0.4943820224719101
+      },
+      "ideal_ms_per_step": 61.89439702709677,
+      "achieved_bandwidth_fraction": 0.24015028448961961
+    },
+    {
+      "config": "c2c-fp32-cupy-N512",
+      "ok": false,
+      "error": "OutOfMemoryError('Out of memory allocating 1,073,741,824 bytes (allocated so far: 41,339,060,224 bytes).')",
+      "N": 512,
+      "transform": "c2c",
+      "precision": "fp32",
+      "backend": "cupy"
+    }
+  ]
+}

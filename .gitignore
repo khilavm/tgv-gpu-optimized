@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+logs/
+*.ncu-rep
+*.out
+*.err
+.ipynb_checkpoints/
